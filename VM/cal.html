@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h1 style="margin-left:200px">SIMPLE CALCULATOR</h1>
+
+    <input placeholder="input a number" id="input1">
+    <span id="symbol"></span>
+    <input placeholder="input a number" id="input2">
+    <span id="answer"></span>
+
+    <button class="calbtn" value="add">+</button>
+    <button class="calbtn" value="sub">-</button>
+    <button class="calbtn" value="div">/</button>
+    <button class="calbtn" value="mult">X</button>
+
+    <script>
+        let mybtn = document.querySelectorAll(".calbtn");
+
+        for (let i = 0; i < mybtn.length; i++) {
+            mybtn[i].addEventListener('click', () => {
+                let myinputone = Number(document.getElementById('input1').value);
+                let myinputtwo = Number(document.getElementById('input2').value);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -4,72 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: orange;
-            margin: 20px;
-        }
-
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background-color: orangered;
-            border-radius: 20px;
-            box-shadow: 2px 10px 8px salmon;
-            width: 300px;
-            height: 300px;
-        }
-
-        button {
-            background-color: orange;
-            border: none;
-            height: 50px;
-            width: 100px;
-            border-radius: 20px;
-            color: white;
-            padding: 5px;
-        }
-
-        input {
-            border-color: orange;
-            border: 5px solid orange;
-            height: 30px;
-            width: auto;
-            padding: 5px;
-        }
-
-        marquee {
-            font-size: medium;
-            margin-top: 30px;
-            color: white;
-        }
-    </style>
+    <title>JS</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div>
-        <input id="userAge" placeholder="What year were you born?"> <br /><br />
-        <button onclick="agecalcEngine()">Calculate Age</button>
-        <marquee>Damiee has done your assignment o!</marquee>
-    </div>
-    <script>
-        function damiee(yearofbirth) {
-            let currentYear = new Date().getFullYear();
-            let urage = currentYear - yearofbirth;
-            alert(`Sophie is ${urage} year(s) old`)
-        }
-
-        function agecalcEngine() {
-            const borneyear = Number(document.getElementById('userAge').value);
-            damiee(borneyear)
-        }   
-    </script>
+    <h1 id="h">Lorem.</h1>
+    <p id="pb">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque animi distinctio consequuntur?</p>
+    <script src="main.js"></script>
 </body>
 
 </html>

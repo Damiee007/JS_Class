@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-items: center;
+            padding: 50px   ;
+        }
+
+        .inihide {
+            display: none;
+        }
+
+        .main-stuff {
+            background-color: rgb(135, 222, 135);
+            padding: 20px;
+            border-radius: 20px;
+            width: 500px;
+            height: 250px;
+            box-shadow: 10px 10px 20px salmon;
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-items: center;
+            color: white;
+            font-size: 60px;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-items: center;
+        }
+
+        .btns button {
+            margin: 0 15px;
+            border: none;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            color: rgb(135, 222, 135);
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- <div id="clock">00:00:00</div> -->
+
+    <div class="main-stuff">
+        <h1 class="counter">
+            <span id="min">00</span>
+            <span id="colm">:</span>
+            <span id="secs">00</span>
+        </h1>
+
+        <div class="btns">
+            <button id="start" onclick="startcount()">Start</button>
+            <button id="pause" onclick="pausecount()" class="inihide">Pause</button>
+            <button id="continue" onclick="continuecount()" class="inihide">Continue</button>
+            <button id="stop" onclick="stopcount()" class="inihide">Stop</button>
+            <button id="reset" onclick="resetcount()" class="inihide">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let mymin = document.getElementById('min');
+        let mysec = document.getElementById('secs');
+        let count = 0;
+        let k;
+
+        function countengine() {
+            count++;
+            let mm = parseInt(count / 60);
+            let ss = count % 60;
+
+            mm = (mm < 10) ? '0' + mm : mm;
+            ss = (ss < 10) ? '0' + ss : ss;
+
+            mymin.innerHTML = mm;
+            mysec.innerHTML = ss;
+        }
+
+        let startbtn = document.getElementById('start');
+        let pausebtn = document.getElementById('pause');
+        let contbtn = document.getElementById('continue');
+        let stopbtn = document.getElementById('stop');
+        let resetbtn = document.getElementById('reset');
+
+        function startcount() {
+            k = setInterval(countengine, 1000);
+            startbtn.style.display = 'none';
+            pausebtn.style.display = 'inline-block';
+            stopbtn.style.display = 'inline-block';
+        }
+
+        function pausecount() {
+            clearInterval(k);
+            pausebtn.style.display = 'none';
+            contbtn.style.display = 'inline-block';
+        }
+
+        function continuecount() {
+            k = setInterval(countengine, 1000);
+            contbtn.style.display = 'none';
+            pausebtn.style.display = 'inline-block';
+        }
+
+        function stopcount() {
+            clearInterval(k);
+            pausebtn.style.display = 'none';
+            contbtn.style.display = 'none';
+            stopbtn.style.display = 'none';
+            resetbtn.style.display = 'inline-block';
+        }
+
+        function resetcount() {
+            count = 0;
+            mymin.innerHTML = "00";
+            mysec.innerHTML = "00";
+            resetbtn.style.display = 'none';
+            startbtn.style.display = 'inline-block';
+        }
+
+        // let session = 'AM'
+        // function updateClock () {
+        //     let currentTime = new Date();
+        //     let hours = currentTime.getHours();
+        //     // const session = hours >=12 ? "PM" : "AM";
+        //     // hours = hours % 12 || 12;
+
+        //     if(hours==0){
+        //         hours=12
+        //     }
+        //     if(hours>12){
+        //         hours=hours-12;
+        //         session= 'pm'
+        //     }
+        //     let minutes = currentTime.getMinutes();
+        //     let seconds = currentTime.getSeconds();
+
+        //     hour=(hour<10)? '0'+hour:hour
+        //     minutes= (minutes<10)? '0'+minutes:minutes;
+        //     seconds = (seconds<10)? '0'+seconds:seconds
+
+        //     let timeString = `${hours}:${minutes}:${seconds} ${session}`;
+        //     document.getElementById('clock').textContent = timeString;
+
+
+        // }
+
+        // updateClock();
+        // setInterval (updateClock, 1000);
+
+    </script>
+
+</body>
+
+</html>

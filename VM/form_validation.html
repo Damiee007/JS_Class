@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <!-- 0
+    ''
+    false
+    null
+    undefined -->
+
+    <input id="ps" placeholder="Password">
+    <button id="btn" onclick="sb()">Submit</button>
+    <p id="error"></p>
+
+    <script>
+        function sb() {
+            let myInput1 = document.getElementById('ps').value
+            let inputError1 = document.getElementById('error')
+
+            if (myInput1 == '') {
+                inputError1.innerHTML = "Input cannot be empty!"
+                inputError1.style.color = "Red"
+            }
+            // else if (!myInput1) {
+            //     inputError1.innerHTML = "Please add a valid input"
+            //     inputError1.style.color = "Orange"
+            // }
+            else if (myInput1.length < 7) {
+                inputError1.innerHTML = "Minimum of 7 characters..."
+                inputError1.style.color = "Orange"
+            }
+
+            else {
+                inputError1.innerHTML = "Valid input"
+                inputError1.style.color = "Green"
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

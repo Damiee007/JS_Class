@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+
+<body>
+
+    <!-- <p class="dami">HTML</p>
+    <p class="dami">Git</p>
+    <p class="dami">CSS</p>
+    <p class="dami">Bootstrap</p>
+    <p class="dami">JavaScript</p>
+    <p class="dami">React</p>
+
+    <button onclick="basitstyle()">Click here!</button> -->
+
+
+    <script>
+
+        // function basitstyle() {
+        //     let courses = document.querySelectorAll('p');
+        // }
+
+        // let cities = ['Ib', 'Lagos', 'Abk', 'London']
+
+        // for (let r = 0; r < cities.length; r++) {
+        //     console.log(cities[r]);
+        // }
+
+        // for (let p=40; p<70; p++) {
+        //     if(p%2 == 0 || p%3 == 0 || p%5 == 0 || p%7 == 0) {
+        //         continue
+        //     }
+        //     console.log(p)
+        // }
+
+
+        let myPrime = prompt('Input a prime number...');
+        let s;
+        if (myPrime < 40 || myPrime > 70 || isNaN(myPrime)) {
+            console.log('Invalid number!')
+        }
+
+        else {
+            for(s=2; s<myPrime; s++) {
+                if (myPrime%s==0) {
+                    console.log (`${myPrime} is not a prime number`);
+                    break;
+                }
+            }
+
+            if (myPrime==s) {
+                console.log (`${myPrime} is a prime number`);
+            }
+
+        }
+
+    
+
+    </script>
+
+</body>
+
+</html>
